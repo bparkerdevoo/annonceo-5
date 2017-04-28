@@ -45,18 +45,18 @@ if(isset($_GET['edit'])){
   if(empty($errors)){
     $countError1 = sizeof($errors1);
       if($countError1 != 7 ){
-        echo 'un truc a été modifié<br>' ;
-        $req = '';
+       // echo 'un truc a été modifié<br>' ;
+       // $req = '';
         foreach ($column as $key => $value) {
           $req = $req.$key.' = \''.$value.'\' , ' ;
         }
-        echo $req ;
-        echo $id1 ;
+       // echo $req ;
+      //  echo $id1 ;
         $query = 'UPDATE membre SET '.$req.' last_modif = Now() WHERE id = :id ; ' ;
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(':id', $id1, PDO::PARAM_INT);
-        if($stmt->execute()){$success= true;$message = 'Les informations user ont bien été mis à jour ' ;setFlashMessage($message);header('Location: inscription-2.php');die;}
-     }else{$message = 'Aucun changement detecté ' ;setFlashMessage($message);header('Location: inscription-2.php?edit='.$id1); die; }
+        if($stmt->execute()){$success= true;$message = 'Les informations user ont bien été mis à jour ' ;setFlashMessage($message);header('Location: inscription.php');die;}
+     }else{$message = 'Aucun changement detecté ' ;setFlashMessage($message);header('Location: inscription.php?edit='.$id1); die; }
    }else{$errors[] = 'Une erreur est survenue' ;}
   }
 }elseif(isset($_GET['del'])){
@@ -68,7 +68,7 @@ if(isset($_GET['edit'])){
     $success= true;
     $message = 'L\'user a bien été supprimé '; 
     setFlashMessage($message);
-    header('Location: inscription-2.php'); 
+    header('Location: inscription.php'); 
     die  ;
   }else{
     $errors[] = 'Une erreur est survenue' ;
@@ -110,8 +110,8 @@ if(isset($_GET['edit'])){
     if($passwd != $cpasswd ){$errors['password'] = 'Les 2 mots de passe saisi sont différents';$errors['vpassword'] = 'Les 2 mots de passe saisi sont différents';}
     /////////////////////////////////////////////////////////////////////////
     //var_dump($errors);
-    echo $civilite.' '.$nom.' '.$prenom.' '.$status.' '.$telephone.' '.$pseudo.' '.$email.' '.$pwd ;
-    var_dump($errors);
+    // echo $civilite.' '.$nom.' '.$prenom.' '.$status.' '.$telephone.' '.$pseudo.' '.$email.' '.$pwd ;
+   // var_dump($errors);
     if(empty($errors)){
       $query = "INSERT INTO membre (civilite, nom, prenom, pseudo, statuts, date_enregistrement, telephone, email, password, last_modif ) VALUES (:civilite, :nom, :prenom, :pseudo, :status, Now(), :telephone, :email, :password, Now()); ";
       $stmt = $pdo->prepare($query);
@@ -128,7 +128,7 @@ if(isset($_GET['edit'])){
       $success= true;
       $message = 'L\'user a bien été créée';
       setFlashMessage($message);
-      header('Location: inscription-2.php');
+      header('Location: inscription.php');
       die;
    }else{
     $errors[] = 'Une erreur est survenue' ;
@@ -137,9 +137,9 @@ if(isset($_GET['edit'])){
 }else{
   //$message = 'Veuillez remplir le formulaire';
   //setFlashMessage($message);
-  //header('Location: inscription-2.php');
+  //header('Location: inscription.php');
   //die;
-  echo 'coucou';
+ // echo 'coucou';
 }
 }
 include '../layout/top.php';
@@ -171,9 +171,9 @@ include '../layout/top.php';
     <td><?= $membre['date_enregistrement'] ?></td>
     <td><?= $membre['last_modif'] ?></td>
     <td>
-      <a class="btn btn-primary" href="inscription-2.php?edit=<?= $membre['id']?>"> Editer </a>
-      <a class="btn btn-primary" href="inscription-2.php?edit=<?= $membre['id']?>"> Modifier </a>
-      <a class="btn btn btn-danger" href="inscription-2.php?del=<?= $membre['id']?>"> Supprimer </a>
+      <a class="btn btn-primary" href="inscription.php?edit=<?= $membre['id']?>"> Editer </a>
+      <a class="btn btn-primary" href="inscription.php?edit=<?= $membre['id']?>"> Modifier </a>
+      <a class="btn btn btn-danger" href="inscription.php?del=<?= $membre['id']?>"> Supprimer </a>
     </td>
   </tr>
 <?php endforeach; ?>
@@ -191,9 +191,9 @@ include '../layout/top.php';
             <!--<option value="Madame" <?php // if($civilite == 'Madame'){ echo 'selected';} ?>>Madame</option>
             <option value="Mademoiselle" <?php // if($civilite == 'Mademoiselle'){ echo 'selected';} ?>>Mademoiselle</option>
             <option value="Monsieur" <?php // if($civilite == 'Monsieur'){ echo 'selected';} ?>>Monsieur</option>-->
-            <option value="mme" <?php if($civilite == 'mme'){ echo 'selected';} ?>>Madame</option>
-            <option value="mlle" <?php if($civilite == 'mlle'){ echo 'selected';} ?>>Mademoiselle</option>
-            <option value="mr" <?php if($civilite == 'mr'){ echo 'selected';} ?>>Monsieur</option>
+            <option value="mme" <?php if($civilite == 'Madame'){ echo 'selected';} ?>>Madame</option>
+            <option value="mlle" <?php if($civilite == 'Mademoiselle'){ echo 'selected';} ?>>Mademoiselle</option>
+            <option value="Monsieur" <?php if($civilite == 'Monsieur'){ echo 'selected';} ?>>Monsieur</option>
           </select>
         <?php else : ?>
           <?php  $civilite = $civilite1 ?>
@@ -202,9 +202,9 @@ include '../layout/top.php';
           <!--  <option value="Madame" <?php // if($civilite == 'Madame'){ echo 'selected';} ?>>Madame</option>
             <option value="Mademoiselle" <?php // if($civilite == 'Mademoiselle'){ echo 'selected';} ?>>Mademoiselle</option>
             <option value="Monsieur" <?php // if($civilite == 'Monsieur'){ echo 'selected';} ?>>Monsieur</option>-->
-             <option value="mme" <?php if($civilite == 'mme'){ echo 'selected';} ?>>Madame</option>
-            <option value="mlle" <?php if($civilite == 'mlle'){ echo 'selected';} ?>>Mademoiselle</option>
-            <option value="mr" <?php if($civilite == 'mr'){ echo 'selected';} ?>>Monsieur</option>
+             <option value="Madame" <?php if($civilite == 'Madame'){ echo 'selected';} ?>>Madame</option>
+            <option value="Mademoiselle" <?php if($civilite == 'Mademoiselle'){ echo 'selected';} ?>>Mademoiselle</option>
+            <option value="Monsieur" <?php if($civilite == 'Monsieur'){ echo 'selected';} ?>>Monsieur</option>
           </select>
         <?php endif ; ?>
         </div>
@@ -377,7 +377,7 @@ include '../layout/top.php';
       <?php else : ?>
         <button type="submit" class="btn btn-primary" name="envoyer" id="envoyer">Créer</button>
       <?php endif ; ?>
-        <a class="btn btn-primary" href="inscription-2.php" id="a">Annuler</a>
+        <a class="btn btn-primary" href="inscription.php" id="a">Annuler</a>
       </div>
     </div>
 </form>
