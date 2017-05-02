@@ -173,7 +173,7 @@ include '../layout/top.php';
     <td>
       <a class="btn btn-primary" href="inscription.php?edit=<?= $membre['id']?>"> Editer </a>
       <a class="btn btn-primary" href="inscription.php?edit=<?= $membre['id']?>"> Modifier </a>
-      <a class="btn btn btn-danger" href="inscription.php?del=<?= $membre['id']?>"> Supprimer </a>
+      <a class="btn btn btn-danger" onclick="return confirm('Voulez vous supprimer cette catégorie?')" href="inscription.php?del=<?= $membre['id']?>"> Supprimer </a>
     </td>
   </tr>
 <?php endforeach; ?>
@@ -381,6 +381,7 @@ include '../layout/top.php';
       </div>
     </div>
 </form>
+
 <?php
 include '../layout/bottom.php';
  ?>

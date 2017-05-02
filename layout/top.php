@@ -25,7 +25,7 @@
              <a href="<?=RACINE_WEB; ?>admin/categories.php">Gestion des Catégories</a>
            </li>
            <li>
-             <a href="<?=RACINE_WEB; ?>admin/produit.php">Gestion des Produits</a>
+             <a href="<?=RACINE_WEB; ?>admin/annonces.php">Gestion des Annonces</a>
            </li>
          </ul>
      </div>
