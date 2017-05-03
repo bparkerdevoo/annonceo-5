@@ -40,7 +40,7 @@
             <?php if(isUserConnected()) : ?>
               <li><a><?= getUserFullName() ?></a></li>
               <li><a href="<?=RACINE_WEB; ?>userinfos.php">Gérer mon compte</a></li>
-              <li><a href="<?=RACINE_WEB; ?>connexion.php">Deconnexion</a></li>
+              <li><a href="<?=RACINE_WEB; ?>index.php">Deconnexion</a></li>
             <?php else : ?>
               <li><a href="<?=RACINE_WEB; ?>inscription.php">Inscription</a></li>
               <li><a href="<?=RACINE_WEB; ?>connexion.php">Connexion</a></li>

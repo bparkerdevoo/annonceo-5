@@ -9,23 +9,9 @@ include 'layout/top.php';
  	// On teste pour voir si nos variables ont bien été enregistrée
 
  	// On affiche un lien pour fermer notre session
-
+$errors = [];
  include 'layout/bottom.php';
  ?>
- <!DOCTYPE html>
- <html>
- <head>
- <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
- <meta name="Content-Language" content="fr" />
- <meta name="Description" content="" />
- <meta name="Keywords" content="Tutoriel Bootstrap avec une page d'inscriptionl" />
- <meta name="Subject" content="" />
- <meta name="Content-Type" content="utf-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
- <title>Espace personnel</title>
- </head>
  <body class="my_background">
    <div class="container">
      <form method="post">
