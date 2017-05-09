@@ -37,7 +37,7 @@
       if(isUserConnected()) {
         header('Location: ' . RACINE_WEB . 'index.php');
       }else{
-        header('Location: ' . RACINE_WEB . 'connexion.php');
+        header('Location: ' . RACINE_WEB . 'index.php');
       }
       die;
     }

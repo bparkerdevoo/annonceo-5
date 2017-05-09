@@ -1,6 +1,5 @@
 <?php
  include 'include/init.php';
- unset($_SESSION['utilisateur']) ;
  include 'layout/top.php';
  $username = $password = '' ;
   $errors = [];
@@ -31,9 +30,8 @@
     //var_dump($result) . '<br>';
     if(!empty($result)){
       unset($result['mdp']) ;   // pour supprimer l'information password pour ne pas a avoir a la stocké dans notre session
-      echo "félicitation vous êtes connecté à votre espace";
       $_SESSION['utilisateur'] = $result;
-       header('Location: monespace.php');
+      header('Location: index.php');
        die;                 // arrête l'execution du script et l'enchainement des instructions .
 
     }else {

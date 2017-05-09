@@ -1,10 +1,5 @@
 <?php
 include 'include/init.php';
-   /*echo '<h1> Inscription <br/> <small> Merci de renseigner vos informations </small></h1>-->';*/
-
- /*/if(!empty($succes)) :
-   ?> */
-  /*<div class="alert alert-danger" role="alert"><strong>Le formulaire contient des erreurs</strong>*/
    $errors = [] ;
    $civilite = $nom = $prenom = $pseudo = $telephone = $status = $email = $cemail =
     $pwd =  $cpwd = '' ;
@@ -253,31 +248,6 @@ include 'include/init.php';
       </div>
     </div>
 </form>
-</div>
-<!--<script src="js/jquery-3.1.1.min.js"></script>
-<script>
-   jQuery(document).ready(function(){
-      $('#envoyer').on('click',function(){
-       var civil = $("#civilite" ).val();
-       console.log(civil);
-       var nom = $("#nom" ).val();
-       console.log(nom);
-       var prenom = $("#prenom" ).val();
-        console.log(prenom);
-       if(civil == 'civil'){
-         alert('Veuillez choisir une civilité '+civil);
-
-       }
-       var mail = $("#email" ).val();
-       var cmail = $("#cemail" ).val();
-       if(mail != cmail ){
-         alert('Les deux adresses mails ne sont pas les mêmes');
-           $("#email" ).css('color', 'red')
-           $("#cemail" ).css('color', 'red')
-       }
- } )
-})
-</script> -->
 <?php
 endif ;
 include 'layout/bottom.php';

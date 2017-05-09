@@ -176,4 +176,13 @@
       jQuery('#kws').html('');
     }
   });
+  $('#addimg').click(function(){
+    if($('#addphoto').css('display') == 'none' ){
+        $('#addphoto').toggle();
+        $('#addimg').text('Annuler');
+    }else{
+        $('#addphoto').toggle();
+         $('#addimg').text('Ajoutez des photos');
+    }
+ });
 });

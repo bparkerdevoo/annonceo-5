@@ -118,9 +118,9 @@ if(isset($_GET['edit'])){
 		<td><?= $categorie['titre'] ?></td>
 		<td><?= $categorie['keyword'] ?></td>
 		<td>
-			<a class="btn btn-primary" href="categories.php?edit=<?= $categorie['id_categorie']?>"> Editer </a>
-			<a class="btn btn-primary" href="categories.php?edit=<?= $categorie['id_categorie']?>"> Modifier </a>
-			<a class="btn btn btn-danger" onclick="return confirm('Voulez vous supprimer cette catégorie?')" href="categories.php?del=<?= $categorie['id_categorie']?>"> Supprimer </a>
+			<a class="btn btn-primary" href="categories.php?edit=<?= $categorie['id_categorie']?>"><span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span> </a>
+			<a class="btn btn-primary" href="categories.php?edit=<?= $categorie['id_categorie']?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
+			<a class="btn btn btn-danger" onclick="return confirm('Voulez vous supprimer cette catégorie?')" href="categories.php?del=<?= $categorie['id_categorie']?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
 		</td>
 	</tr>
   <?php endforeach; ?>

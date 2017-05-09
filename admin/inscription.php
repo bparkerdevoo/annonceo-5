@@ -1,5 +1,6 @@
 <?php
 include '../include/init.php';
+adminSecurity();
 displayFlashMessage();
 $query = 'SELECT * FROM membre ORDER BY id ;';
 $stmt = $pdo->query($query);
@@ -171,9 +172,9 @@ include '../layout/top.php';
     <td><?= $membre['date_enregistrement'] ?></td>
     <td><?= $membre['last_modif'] ?></td>
     <td>
-      <a class="btn btn-primary" href="inscription.php?edit=<?= $membre['id']?>"> Editer </a>
-      <a class="btn btn-primary" href="inscription.php?edit=<?= $membre['id']?>"> Modifier </a>
-      <a class="btn btn btn-danger" onclick="return confirm('Voulez vous supprimer cette catégorie?')" href="inscription.php?del=<?= $membre['id']?>"> Supprimer </a>
+        <a class="btn btn-primary" href="inscription.php?edit=<?= $membre['id']?>"><span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span></a>
+      <a class="btn btn-primary" href="inscription.php?edit=<?= $membre['id']?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+      <a class="btn btn btn-danger" onclick="return confirm('Voulez vous supprimer cette catégorie?')" href="inscription.php?del=<?= $membre['id']?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
     </td>
   </tr>
 <?php endforeach; ?>

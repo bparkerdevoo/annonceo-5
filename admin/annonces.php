@@ -149,8 +149,8 @@ $annonces = $stmt->fetchAll();
 		<td><?= $annonce['nomcategorie'] ?></td>
 		<td><?= $annonce['dt'] ?></td>
 		<td>
-			<a class="btn btn-primary" href="annonce.php?edit=<?= $annonce['id_annonce']?>">  <span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"> </a>
-			<a class="btn btn-primary" href="annonce.php?edit=<?= $annonce['id_annonce']?>"> <span class="glyphicon glyphicon-pencil" aria-hidden="true"> </a>
+			<a class="btn btn-primary" href="annonce.php?edit=<?= $annonce['id_annonce']?>">  <span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span> </a>
+			<a class="btn btn-primary" href="annonce.php?edit=<?= $annonce['id_annonce']?>"> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </a>
 			<a  onclick="return confirm('Voulez vous supprimer cette catégorie?')" href="annonce.php?del=<?= $annonce['id_annonce']?>"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>
 		</td>
 	</tr>

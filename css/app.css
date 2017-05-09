@@ -1,5 +1,6 @@
 body {
-    background: #252525;
+    /*background: #252525;*/
+    background: #e4e1e1;
     font-family: 'Open Sans';
     font-weight: 300;
 }
@@ -45,3 +46,6 @@ input.form-control , input[type="submit"] , .btn {
 .credits a {
     color: inherit;
 }
+#success_message{ display: none;}
+ .navbar-inverse { margin-bottom:0; }
+#addphoto {display:none;}
