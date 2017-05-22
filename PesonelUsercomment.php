@@ -6,7 +6,6 @@ if(!isUserConnected()){
       die;
 }
 $id= $_SESSION['utilisateur']['id'];
-echo $id ;
 displayFlashMessage();
 include 'layout/top.php';
 $query = 'SELECT commentaire.id_commentaire, commentaire.membre_id as mbId, commentaire.annonce_id as anId, commentaire.texte, 
@@ -51,7 +50,6 @@ $notes = $stmt->fetchAll();
 		<td>
                     <a class="btn btn-primary" href="categories.php?edit=<?= $commentaire['id_commentaire']?>"><span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span>  </a>
 			<a class="btn btn-primary" href="categories.php?edit=<?= $commentaire['id_commentaire']?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  </a>
-			<a class="btn btn btn-danger" onclick="return confirm('Voulez vous supprimer cette catégorie?')" href="categories.php?del=<?= $commentaire['id_commentaire']?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>
 		</td>
 	</tr>
   <?php endforeach; ?>
@@ -87,7 +85,6 @@ $notes = $stmt->fetchAll();
 		<td>
                     <a class="btn btn-primary" href="categories.php?edit=<?= $note['id_note']?>"><span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span>  </a>
 			<a class="btn btn-primary" href="categories.php?edit=<?= $note['id_note']?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  </a>
-			<a class="btn btn btn-danger" onclick="return confirm('Voulez vous supprimer cette catégorie?')" href="categories.php?del=<?= $note['id_note']?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>
 		</td>
 	</tr>
   <?php endforeach; ?>

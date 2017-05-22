@@ -34,14 +34,15 @@
         <div classe="container">
             <a class="navbar-brand" href="<?=RACINE_WEB; ?>index.php">Annonceo</a><!-- Mettre une image-->
             <ul class="nav navbar-nav navbar-right">
-            <?php if(isUserConnected()) : ?>
+            <?php if(isUserConnected()) : 
+                  $id = $_SESSION['utilisateur']['id'];     ?>
                 <li><a><?= getUserFullName() ?></a></li>
                 <li class="dropdown"><a href="<?=RACINE_WEB; ?>PersonelUserInfo.php" class="dropdown-toggle" type="text" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 Gérer Mon compte<span class="caret"></span></a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="<?=RACINE_WEB; ?>PesonelUserInfo.php" title="userinfo">Mes informations personnels / Mes Annonces</a></li>
+                         <li><a href="<?=RACINE_WEB; ?>inscription.php?edit=<?= $id; ?>" title="usercomment">Mes Informations Personnels</a></li>
+                        <li><a href="<?=RACINE_WEB; ?>annonces.php" title="userinfo">Mes Annonces</a></li>
                         <li><a href="<?=RACINE_WEB; ?>PesonelUsercomment.php" title="usercomment">Mes commentaires / Mes notes</a></li>
-          
                     </ul>
               </li>
               <li><a href="<?=RACINE_WEB; ?>deconnexion.php">Deconnexion</a></li>

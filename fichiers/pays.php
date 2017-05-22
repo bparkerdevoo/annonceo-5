@@ -2,13 +2,12 @@
 include '../include/init.php';
 $resultat = array();
 if (isset($_POST['lettre'])) {
-
-	$lettre = $_POST['lettre'].'%';
-	//echo $lettre ;
-	//$stmt = $pdo->query('SELECT nom FROM annonceo.pays WHERE nom LIKE'..'limit 10');
-	$query='SELECT nom FROM annonceo.pays WHERE nom LIKE '.$pdo->quote($lettre).' limit 10 ;';
-	$stmt = $pdo->query($query);
-	//$stmt->bindParam(':nom', $lettre, PDO::PARAM_STR);
+	$lettre = $_POST['lettre'];
+	$query='SELECT nom FROM annonceo.pays WHERE nom LIKE :lettre limit 10 ;';
+	$stmt=$pdo->prepare($query);
+	$stmt = $pdo->prepare($query);
+	$stmt->bindValue(':lettre',"$lettre%" , PDO::PARAM_STR);
+	$stmt->execute();
 	while($mot = $stmt->fetch(PDO::FETCH_ASSOC)) {
 		$resultat[] = $mot['nom'];
 	}
