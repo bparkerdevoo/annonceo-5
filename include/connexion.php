@@ -7,15 +7,15 @@ $options = [
   PDO::ATTR_DEFAULT_FETCH_MODE =>
   PDO::FETCH_ASSOC
 ];
-//////// Maison //////////////////
+//////// /////////////////////
 //define("PDO_HOST", "127.0.0.1");
-//define("PDO_DBBASE", "annonceo");
-//define("PDO_USER", "root");
+//define("PDO_DBBASE", "");
+//define("PDO_USER", "");
 //define("PDO_PW", "");
 /////// IFOCOP ///////////////////
 define("PDO_HOST", "127.0.0.1");
-define("PDO_DBBASE", "annonceo");
-define("PDO_USER", "root");
+define("PDO_DBBASE", "");
+define("PDO_USER", "");
 define("PDO_PW", "");
 try{
 //$connection = new PDO(
