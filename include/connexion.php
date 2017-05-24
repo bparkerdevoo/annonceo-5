@@ -11,7 +11,7 @@ $options = [
 //define("PDO_HOST", "127.0.0.1");
 //define("PDO_DBBASE", "annonceo");
 //define("PDO_USER", "root");
-//define("PDO_PW", "hellali26");
+//define("PDO_PW", "");
 /////// IFOCOP ///////////////////
 define("PDO_HOST", "127.0.0.1");
 define("PDO_DBBASE", "annonceo");
